@@ -1,6 +1,5 @@
 package com.cafe24.jblog.vo;
 
-import org.hibernate.validator.constraints.NotEmpty;
 
 public class BlogVo {
 	

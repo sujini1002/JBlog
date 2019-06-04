@@ -1,12 +1,5 @@
 package com.cafe24.jblog.dto;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-
 public class JSONResult {
 	private String result; // success,fail
 	private String message;//if fail, set message
