@@ -46,8 +46,8 @@ public class BlogController {
 		modelMap.put("categoryList", categoryList);
 		
 		//PathVariable의 기본 값 셋팅
-		Long category_no = c_no.isPresent()?c_no.get():0;
-		Long post_no = p_no.isPresent()?p_no.get():0;
+		Long category_no = c_no.isPresent()?c_no.get():0L;
+		Long post_no = p_no.isPresent()?p_no.get():0L;
 		
 		//화면에 보여질 페이지 
 		PostVo postVo = blogService.getPost(id,category_no,post_no);
