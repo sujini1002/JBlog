@@ -23,7 +23,7 @@ import com.cafe24.jblog.vo.CategoryVo;
 import com.cafe24.jblog.vo.PostVo;
 
 @Controller
-@RequestMapping("/{id:(?!images|assets).*}")
+@RequestMapping("/{id:(?!assets|images).*}")
 public class BlogController {
 	
 	@Autowired
