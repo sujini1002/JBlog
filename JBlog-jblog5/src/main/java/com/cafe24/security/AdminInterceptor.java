@@ -28,7 +28,6 @@ public class AdminInterceptor extends HandlerInterceptorAdapter {
 		String uri = request.getRequestURI();
 		String[] uriArr = uri.split("/");
 		
-		System.out.println(uri);
 		
 		//1. handler 종류 확인
 		if(handler instanceof HandlerMethod == false) {
