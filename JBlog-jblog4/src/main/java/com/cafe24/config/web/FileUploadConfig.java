@@ -21,7 +21,7 @@ public class FileUploadConfig extends WebMvcConfigurerAdapter {
 	//MultiPartResolver
 	//
 	@Bean
-	public CommonsMultipartResolver MultipartResolver() {
+	public CommonsMultipartResolver multipartResolver() {
 		CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
 		multipartResolver.setMaxUploadSize(env.getProperty("maxUploadSize",Integer.class));
 		multipartResolver.setMaxInMemorySize(env.getProperty("maxInMemorySize",Integer.class));
@@ -29,9 +29,10 @@ public class FileUploadConfig extends WebMvcConfigurerAdapter {
 		
 		return multipartResolver;
 	}
+	
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler(env.getProperty("resourceMapping")).addResourceLocations(env.getProperty("uploadLocation"));
+		registry.addResourceHandler("/images/**").addResourceLocations("file:/jblog-uploads/");
 	}
 	
 }
