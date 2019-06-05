@@ -107,6 +107,10 @@ public class BlogController {
 			List<CategoryVo> categoryList = blogService.getCategory(id);
 			model.addAttribute("categoryList", categoryList);
 			
+			//블로그 정보
+			BlogVo blogVo = blogService.getAdminBlog(id);
+			model.addAttribute("blogVo", blogVo);
+			
 			return "blog/blog-admin-category";
 		}
 		blogService.addCategory(id, categoryVo);
@@ -143,8 +147,13 @@ public class BlogController {
 		// Valid 체크가 틀릴 시, join form으로 넘김
 		if (result.hasErrors()) {
 			model.addAttribute(result.getModel()); // Map으로 보내줌
+			//카테고리 리스트 정보
 			List<CategoryVo> categoryList = blogService.getCategory(id);
 			model.addAttribute("categoryList", categoryList);
+			//블로그 정보
+			BlogVo blogVo = blogService.getAdminBlog(id);
+			model.addAttribute("blogVo", blogVo);
+			
 			return "blog/blog-admin-write";
 		}
 		//글 작성
