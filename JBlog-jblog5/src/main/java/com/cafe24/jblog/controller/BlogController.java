@@ -16,8 +16,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.cafe24.jblog.service.BlogService;
 import com.cafe24.jblog.vo.BlogVo;
@@ -46,8 +44,8 @@ public class BlogController {
 		modelMap.put("categoryList", categoryList);
 		
 		//PathVariable의 기본 값 셋팅
-		Long category_no = c_no.isPresent()?c_no.get():0;
-		Long post_no = p_no.isPresent()?p_no.get():0;
+		Long category_no = c_no.isPresent()?c_no.get():0L;
+		Long post_no = p_no.isPresent()?p_no.get():0L;
 		
 		//화면에 보여질 페이지 
 		PostVo postVo = blogService.getPost(id,category_no,post_no);
