@@ -9,8 +9,6 @@ import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import com.cafe24.jblog.repository.BlogDao;
-import com.cafe24.jblog.repository.CategoryDao;
-import com.cafe24.jblog.repository.PostDao;
 import com.cafe24.jblog.repository.UserDao;
 import com.cafe24.jblog.vo.BlogVo;
 import com.cafe24.jblog.vo.UserVo;
@@ -29,7 +27,6 @@ public class AdminInterceptor extends HandlerInterceptorAdapter {
 			throws Exception {
 		String uri = request.getRequestURI();
 		String[] uriArr = uri.split("/");
-		String beforeUrl = (String)request.getHeader("REFERER");
 		
 		
 		//1. handler 종류 확인
@@ -38,7 +35,7 @@ public class AdminInterceptor extends HandlerInterceptorAdapter {
 		}
 		
 		//2.casting
-		HandlerMethod handlerMethod = (HandlerMethod)handler;
+//		HandlerMethod handlerMethod = (HandlerMethod)handler;
 		
 		
 		// 3.uriarr 2번째 값이 존재하지 않을 때 false

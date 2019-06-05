@@ -81,7 +81,8 @@ public class WebConfig implements WebMvcConfigurer{
 											.excludePathPatterns("/user/auth")
 											.excludePathPatterns("/user/logout")
 											.excludePathPatterns("/assets/**")
-											.excludePathPatterns("/user/**");
+											.excludePathPatterns("/user/**")
+											.excludePathPatterns("/images/**");
 		}
 		//mutipart
 		public void addResourceHandlers(ResourceHandlerRegistry registry) {
